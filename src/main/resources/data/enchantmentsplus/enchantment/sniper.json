@@ -1,0 +1,23 @@
+{
+  "_PORT-NOTE": "Feldnamen/Tag-IDs entsprechen dem 1.21.x Datenpack-Format; fuer 26.2 unverifiziert - bitte gegen ein Vanilla-Beispiel aus dem 26.2-JAR (data/minecraft/enchantment/*.json) abgleichen.",
+  "description": {
+    "translate": "enchantment.enchantmentsplus.sniper"
+  },
+  "supported_items": "#minecraft:enchantable/bow",
+  "weight": 3,
+  "max_level": 3,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 20
+  },
+  "max_cost": {
+    "base": 37,
+    "per_level_above_first": 20
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {},
+  "exclusive_set": "#enchantmentsplus:exclusive_set/bow_special"
+}

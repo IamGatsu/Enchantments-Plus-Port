@@ -1,0 +1,23 @@
+{
+  "_PORT-NOTE": "Feldnamen/Tag-IDs entsprechen dem 1.21.x Datenpack-Format; fuer 26.2 unverifiziert - bitte gegen ein Vanilla-Beispiel aus dem 26.2-JAR (data/minecraft/enchantment/*.json) abgleichen.",
+  "description": {
+    "translate": "enchantment.enchantmentsplus.dualleap"
+  },
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 8,
+  "slots": [
+    "feet"
+  ],
+  "effects": {},
+  "exclusive_set": "#enchantmentsplus:exclusive_set/feet_special"
+}
