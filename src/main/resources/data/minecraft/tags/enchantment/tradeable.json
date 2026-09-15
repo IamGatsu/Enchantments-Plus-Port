@@ -1,0 +1,13 @@
+{
+  "_PORT-NOTE": "UNVERIFIZIERT: Ob der Tag in 26.2 wirklich 'minecraft:tradeable' heisst und diese Bedeutung hat (Verfuegbarkeit bei Doerfler-Handel), bitte gegen ein Vanilla-JAR pruefen. Bildet isAvailableForEnchantedBookOffer()==true (Standardkonfiguration) nach.",
+  "replace": false,
+  "values": [
+    "enchantmentsplus:blazewalker","enchantmentsplus:cubical","enchantmentsplus:dualleap",
+    "enchantmentsplus:endslayer","enchantmentsplus:excavator","enchantmentsplus:flashforge",
+    "enchantmentsplus:frostbite","enchantmentsplus:hiker","enchantmentsplus:levitation",
+    "enchantmentsplus:lifesteal","enchantmentsplus:lunarsight","enchantmentsplus:moonwalker",
+    "enchantmentsplus:mysticmind","enchantmentsplus:payback","enchantmentsplus:raider",
+    "enchantmentsplus:sniper","enchantmentsplus:stormstrike","enchantmentsplus:thunderlord",
+    "enchantmentsplus:toxicstrike"
+  ]
+}

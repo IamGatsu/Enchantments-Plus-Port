@@ -1,0 +1,9 @@
+{
+  "_PORT-NOTE": "Cubical/EndSlayer/Raider schliessen sich gegenseitig UND mit allen 'DamageEnchantment' (Sharpness/Smite/BaneOfArthropods) aus - Letzteres wird ueber die Vanilla-Tag-Referenz unten nachgebildet. Bitte pruefen, ob der Vanilla-Tagname in 26.2 noch 'exclusive_set/damage' heisst.",
+  "values": [
+    "enchantmentsplus:cubical",
+    "enchantmentsplus:endslayer",
+    "enchantmentsplus:raider",
+    "#minecraft:exclusive_set/damage"
+  ]
+}

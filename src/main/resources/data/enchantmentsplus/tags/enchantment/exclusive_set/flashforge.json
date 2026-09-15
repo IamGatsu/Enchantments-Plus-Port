@@ -1,0 +1,6 @@
+{
+  "_PORT-NOTE": "FlashForgeEnchantment#canAccept schloss nur Silk Touch aus.",
+  "values": [
+    "minecraft:silk_touch"
+  ]
+}

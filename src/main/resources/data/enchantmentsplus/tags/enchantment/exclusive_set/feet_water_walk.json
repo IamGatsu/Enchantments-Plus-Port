@@ -1,0 +1,7 @@
+{
+  "_PORT-NOTE": "Bildet BlazeWalkerEnchantment#canAccept nach (schliesst sich mit Frost Walker/Depth Strider aus). Pruefen, ob Vanilla in 26.2 dafuer bereits einen eigenen exclusive_set-Tag mitliefert, den man stattdessen erweitern koennte.",
+  "values": [
+    "minecraft:frost_walker",
+    "minecraft:depth_strider"
+  ]
+}

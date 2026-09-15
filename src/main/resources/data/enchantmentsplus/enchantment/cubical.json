@@ -1,0 +1,24 @@
+{
+  "_PORT-NOTE": "Feldnamen/Tag-IDs entsprechen dem 1.21.x Datenpack-Format; fuer 26.2 unverifiziert - bitte gegen ein Vanilla-Beispiel aus dem 26.2-JAR (data/minecraft/enchantment/*.json) abgleichen.",
+  "description": {
+    "translate": "enchantment.enchantmentsplus.cubical"
+  },
+  "supported_items": "#minecraft:swords",
+  "weight": 5,
+  "max_level": 5,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 8
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 8
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {},
+  "primary_items": "#minecraft:enchantable/weapon",
+  "exclusive_set": "#enchantmentsplus:exclusive_set/melee_special"
+}

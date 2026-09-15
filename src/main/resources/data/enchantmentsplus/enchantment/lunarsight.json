@@ -1,0 +1,22 @@
+{
+  "_PORT-NOTE": "Feldnamen/Tag-IDs entsprechen dem 1.21.x Datenpack-Format; fuer 26.2 unverifiziert - bitte gegen ein Vanilla-Beispiel aus dem 26.2-JAR (data/minecraft/enchantment/*.json) abgleichen.",
+  "description": {
+    "translate": "enchantment.enchantmentsplus.lunarsight"
+  },
+  "supported_items": "#minecraft:enchantable/head_armor",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 41,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "head"
+  ],
+  "effects": {}
+}

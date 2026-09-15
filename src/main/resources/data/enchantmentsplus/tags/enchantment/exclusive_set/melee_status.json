@@ -1,0 +1,9 @@
+{
+  "_PORT-NOTE": "Frostbite/ToxicStrike/Levitation schliessen sich laut Original gegenseitig UND mit Fire Aspect aus.",
+  "values": [
+    "enchantmentsplus:frostbite",
+    "enchantmentsplus:toxicstrike",
+    "enchantmentsplus:levitation",
+    "minecraft:fire_aspect"
+  ]
+}

@@ -1,0 +1,106 @@
+plugins {
+    // PORT-NOTE (Fix): Ab Minecraft 26.1+ heisst die Loom-Plugin-ID
+    // "net.fabricmc.fabric-loom" statt des alten Kurznamens "fabric-loom".
+    // Mit dem alten Namen sucht Loom weiterhin im alten (obfuskierten)
+    // Mapping-Modus nach Mappings und findet dadurch keine offiziellen
+    // Mojang-Mappings fuer 26.x - genau das war die Ursache des Fehlers
+    // "Failed to find official mojang mappings for 26.2".
+    // Quelle: https://docs.fabricmc.net/26.1.2/develop/porting/ (Schritt 3)
+    id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+repositories {
+    // PORT-NOTE: bitte pruefen, ob shedaniel/terraformersmc ihre Maven-Repos
+    // fuer die 26.2-Builds von cloth-config/mod-menu weiterhin hier hosten.
+    maven { url "https://maven.shedaniel.me/" }
+    maven { url "https://maven.terraformersmc.com/releases/" }
+}
+
+dependencies {
+    // To change the versions see the gradle.properties file
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+    // PORT-NOTE (Fix): Ab 26.1+ gibt es KEINE "mappings"-Zeile mehr in
+    // dependencies{} - Minecraft ist seit 26.1 unobfuskiert ausgeliefert,
+    // Loom braucht daher gar keine Mapping-Zuordnung mehr (auch nicht
+    // loom.officialMojangMappings()). Diese Zeile wurde laut offizieller
+    // Fabric-Porting-Doku ersatzlos gestrichen:
+    // https://docs.fabricmc.net/26.1.2/develop/porting/ (Schritt 4)
+
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    // Fabric API
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // Cloth config
+    // PORT-NOTE: Artefakt-Koordinaten/Klassennamen von cloth-config koennten
+    // sich mit dem Wechsel auf offizielle Mappings geaendert haben - bitte
+    // gegenpruefen, falls der Build hier fehlschlaegt.
+    implementation("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+        exclude group: "net.fabricmc.fabric-api"
+    }
+
+    // Mod menu
+    implementation("com.terraformersmc:modmenu:${project.mod_menu_version}") {
+        exclude group: "net.fabricmc.fabric-api"
+    }
+}
+
+base {
+    archivesName = project.archives_base_name
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = "UTF-8"
+    // PORT-NOTE (Fix): Laut offizieller Fabric-Porting-Doku (Schritt 8,
+    // https://docs.fabricmc.net/26.1.2/develop/porting/) muss die
+    // Java-Kompatibilitaet ab 26.1+ auf 25 gesetzt werden, nicht mehr auf 21.
+    it.options.release = 25
+}
+
+java {
+    // PORT-NOTE: Fund aus einer FabricMC-Diskussion zu genau diesem Fehler
+    // ("Failed to find official mojang mappings for 26.1/26.2"): Gradle muss
+    // zwingend mit JDK 25 laufen, sonst kann Loom die offiziellen
+    // Mojang-Mappings nicht aufloesen. Dieser Toolchain-Zwang stellt das
+    // sicher, unabhaengig davon, welches JAVA_HOME sonst aktiv ist.
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+    withSourcesJar()
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${base.archivesName.get()}" }
+    }
+}
+
+// configure the maven publication
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            // PORT-NOTE: "remapJar"/"remapSourcesJar" gibt es im
+            // Non-Remap-Modus nicht mehr - stattdessen die normalen
+            // "jar"/"sourcesJar"-Tasks referenzieren.
+            artifact(jar)
+            artifact(sourcesJar)
+        }
+    }
+
+    repositories {
+        // Add repositories to publish to here.
+    }
+}

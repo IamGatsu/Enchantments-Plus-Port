@@ -1,0 +1,13 @@
+{
+  "_PORT-NOTE": "UNVERIFIZIERT: Tagname/Bedeutung fuer 'im Zaubertisch anwaehlbar' bitte gegen 26.2 pruefen. Bildet isAvailableForRandomSelection()==true (Standardkonfiguration) nach.",
+  "replace": false,
+  "values": [
+    "enchantmentsplus:blazewalker","enchantmentsplus:cubical","enchantmentsplus:dualleap",
+    "enchantmentsplus:endslayer","enchantmentsplus:excavator","enchantmentsplus:flashforge",
+    "enchantmentsplus:frostbite","enchantmentsplus:hiker","enchantmentsplus:levitation",
+    "enchantmentsplus:lifesteal","enchantmentsplus:lunarsight","enchantmentsplus:moonwalker",
+    "enchantmentsplus:mysticmind","enchantmentsplus:payback","enchantmentsplus:raider",
+    "enchantmentsplus:sniper","enchantmentsplus:stormstrike","enchantmentsplus:thunderlord",
+    "enchantmentsplus:toxicstrike"
+  ]
+}
